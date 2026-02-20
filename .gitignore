@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.venv/
+
+# Build
+build/
+dist/
+
+# Local env
+.env
+
+# Benchmark outputs (preserve folder structure)
+results/episodes/*.jsonl
+results/turns/*.jsonl
+results/summaries/*.csv
+results/summaries/*_config_snapshot.yaml
+
+!results/episodes/.gitkeep
+!results/turns/.gitkeep
+!results/summaries/.gitkeep

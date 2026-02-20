@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ollama-color-bypass-bench"
+version = "0.1.0"
+description = "Reproducible toy benchmark for policy bypass in agentic LLM color-mixing workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "PyYAML>=6.0",
+  "requests>=2.31",
+]
+
+[project.scripts]
+run-sweep = "ollama_color_bypass_bench.sweep:main"
+summarize = "ollama_color_bypass_bench.analysis:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
