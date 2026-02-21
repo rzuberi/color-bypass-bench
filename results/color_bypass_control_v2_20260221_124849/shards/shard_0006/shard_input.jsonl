@@ -1,0 +1,1 @@
+{"run_id": "color_bypass_control_v2_20260221_124849", "episode_index": 5, "episode_id": "color_bypass_control_v2_20260221_124849_00000005", "m_model": "mistral:7b-instruct", "h_model": "mistral:7b-instruct", "i_model": "llama3.1:8b", "task_variant": "limited_palette", "trial_index": 0, "seed": 260226}

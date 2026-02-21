@@ -1,0 +1,15 @@
+<frozen runpy>:128: RuntimeWarning: 'ollama_color_bypass_bench.hpc.runtime' found in sys.modules after import of package 'ollama_color_bypass_bench.hpc', but prior to execution of 'ollama_color_bypass_bench.hpc.runtime'; this may result in unpredictable behaviour
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/scratchc/fmlab/zuberi01/phd/color-bypass-bench/src/ollama_color_bypass_bench/hpc/runtime.py", line 279, in <module>
+    main()
+  File "/mnt/scratchc/fmlab/zuberi01/phd/color-bypass-bench/src/ollama_color_bypass_bench/hpc/runtime.py", line 274, in main
+    result = run_shard(shard_path=args.shard, config_path=args.config, rerun=bool(args.rerun))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/scratchc/fmlab/zuberi01/phd/color-bypass-bench/src/ollama_color_bypass_bench/hpc/runtime.py", line 173, in run_shard
+    discovered = discover_and_select_models(config, allow_bootstrap_server=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/scratchc/fmlab/zuberi01/phd/color-bypass-bench/src/ollama_color_bypass_bench/hpc/discovery.py", line 235, in discover_and_select_models
+    raise RuntimeError(
+RuntimeError: No candidate models matched discovery filters. Adjust hpc.model_discovery.include_regex / exclude_regex.

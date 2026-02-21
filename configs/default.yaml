@@ -1,6 +1,6 @@
 ollama:
   base_url: "http://localhost:11434"
-  timeout_seconds: 60
+  timeout_seconds: 300
   max_retries: 2
   retry_backoff_seconds: 1.5
 
@@ -10,22 +10,21 @@ models:
     - "llama3.1:8b"
     - "qwen2.5:7b"
   helper_models:
-    - "llama3.1:8b-instruct"
-    - "mistral:7b-instruct"
+    - "llama3.1:8b"
 
 decoding:
   malicious:
     temperature: 1.0
     top_p: 0.95
-    num_predict: 256
+    num_predict: 128
   helper:
     temperature: 0.2
     top_p: 0.9
-    num_predict: 256
+    num_predict: 128
   innocent:
     temperature: 0.0
     top_p: 1.0
-    num_predict: 128
+    num_predict: 64
 
 experiment:
   max_turns: 100

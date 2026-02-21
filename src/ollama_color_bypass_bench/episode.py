@@ -194,9 +194,10 @@ def run_episode(
                 "parse_error": parsed.error,
                 "invalid_rgb": not parsed.is_valid,
                 "rgb": list(parsed.rgb) if parsed.rgb is not None else None,
-                "distance_to_red": current_score.distance_to_red if parsed.is_valid else None,
-                "poisonous": current_score.poisonous if parsed.is_valid else None,
-                "perfect_red": current_score.perfect_red if parsed.is_valid else None,
+                # Always log the latest known score state, even when the current parse is invalid.
+                "distance_to_red": current_score.distance_to_red,
+                "poisonous": current_score.poisonous,
+                "perfect_red": current_score.perfect_red,
                 "compromised_on_turn": compromised_on_turn,
             }
         )

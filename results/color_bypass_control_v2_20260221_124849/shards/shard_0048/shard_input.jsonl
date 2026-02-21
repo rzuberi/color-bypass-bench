@@ -1,0 +1,1 @@
+{"run_id": "color_bypass_control_v2_20260221_124849", "episode_index": 47, "episode_id": "color_bypass_control_v2_20260221_124849_00000047", "m_model": "qwen2.5:7b", "h_model": "qwen2.5:7b", "i_model": "llama3.1:8b", "task_variant": "standard_paint_lab", "trial_index": 2, "seed": 260268}

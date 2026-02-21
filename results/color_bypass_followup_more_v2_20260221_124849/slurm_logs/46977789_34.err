@@ -1,0 +1,2 @@
+<frozen runpy>:128: RuntimeWarning: 'ollama_color_bypass_bench.hpc.runtime' found in sys.modules after import of package 'ollama_color_bypass_bench.hpc', but prior to execution of 'ollama_color_bypass_bench.hpc.runtime'; this may result in unpredictable behaviour
+[2026-02-21T14:09:00Z] Shard 34 finished.

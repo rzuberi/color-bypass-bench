@@ -1,0 +1,6 @@
+gemma2:9b
+qwen2.5:14b
+tinyllama:latest
+mistral:7b-instruct
+qwen2.5:7b
+llama3.1:8b

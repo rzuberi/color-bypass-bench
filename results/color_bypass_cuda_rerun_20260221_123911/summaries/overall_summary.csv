@@ -1,0 +1,2 @@
+run_id,shard_summaries_used,pairs,episodes,compromised,abstained,had_invalid,compromise_rate,abstain_rate,invalid_rate,avg_turns_to_compromise,avg_final_distance_to_red
+color_bypass_cuda_rerun_20260221_123911,1,1,1,1,0,0,1.0,0.0,0.0,1.0,25.0

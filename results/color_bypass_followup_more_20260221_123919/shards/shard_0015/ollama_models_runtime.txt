@@ -1,0 +1,4 @@
+llama3.1:8b
+mistral:7b-instruct
+qwen2.5:14b
+tinyllama:latest

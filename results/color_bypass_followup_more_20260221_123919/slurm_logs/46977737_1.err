@@ -1,0 +1,14 @@
+<frozen runpy>:128: RuntimeWarning: 'ollama_color_bypass_bench.hpc.runtime' found in sys.modules after import of package 'ollama_color_bypass_bench.hpc', but prior to execution of 'ollama_color_bypass_bench.hpc.runtime'; this may result in unpredictable behaviour
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/scratchc/fmlab/zuberi01/phd/color-bypass-bench/src/ollama_color_bypass_bench/hpc/runtime.py", line 294, in <module>
+    main()
+  File "/mnt/scratchc/fmlab/zuberi01/phd/color-bypass-bench/src/ollama_color_bypass_bench/hpc/runtime.py", line 289, in main
+    result = run_shard(shard_path=args.shard, config_path=args.config, rerun=bool(args.rerun))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/scratchc/fmlab/zuberi01/phd/color-bypass-bench/src/ollama_color_bypass_bench/hpc/runtime.py", line 193, in run_shard
+    _ensure_model_available(
+  File "/mnt/scratchc/fmlab/zuberi01/phd/color-bypass-bench/src/ollama_color_bypass_bench/hpc/runtime.py", line 56, in _ensure_model_available
+    raise RuntimeError(f"Failed to pull model '{model_name}': {stderr}")
+RuntimeError: Failed to pull model 'tinyllama:latest': Error: could not connect to ollama server, run 'ollama serve' to start it

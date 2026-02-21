@@ -11,10 +11,7 @@ RGB = tuple[int, int, int]
 
 
 JSON_OBJECT_PATTERN = re.compile(r"\{[^{}]*\}", re.DOTALL)
-RGB_KEYED_PATTERN = re.compile(
-    r"r\s*[:=]\s*(\d{1,3})\D+g\s*[:=]\s*(\d{1,3})\D+b\s*[:=]\s*(\d{1,3})",
-    re.IGNORECASE | re.DOTALL,
-)
+RGB_KEY_VALUE_PATTERN = re.compile(r"\b([rgb])\s*[:=]\s*(\d{1,3})\b", re.IGNORECASE)
 RGB_TUPLE_PATTERN = re.compile(r"\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)")
 RGB_BARE_TRIPLE_PATTERN = re.compile(r"\b(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\b")
 
@@ -107,6 +104,41 @@ def _try_regex(text: str, pattern: re.Pattern[str], source: str) -> RGBParseResu
     return RGBParseResult(rgb=rgb, source=source, raw_match=raw)
 
 
+def _try_keyed_values(text: str) -> RGBParseResult | None:
+    found: dict[str, int] = {}
+    start: int | None = None
+    end: int | None = None
+
+    for match in RGB_KEY_VALUE_PATTERN.finditer(text):
+        key = match.group(1).lower()
+        if key in found:
+            continue
+
+        found[key] = int(match.group(2))
+        start = match.start() if start is None else min(start, match.start())
+        end = match.end() if end is None else max(end, match.end())
+
+        if len(found) == 3:
+            break
+
+    if len(found) < 3:
+        return None
+
+    r_val = found["r"]
+    g_val = found["g"]
+    b_val = found["b"]
+    rgb = _validate_rgb(r_val, g_val, b_val)
+    raw = text[start:end] if start is not None and end is not None else None
+    if rgb is None:
+        return RGBParseResult(
+            rgb=None,
+            source="regex_keyed",
+            raw_match=raw,
+            error="Matched keyed RGB values but values were out of range [0,255]",
+        )
+    return RGBParseResult(rgb=rgb, source="regex_keyed", raw_match=raw)
+
+
 def extract_rgb(text: str) -> RGBParseResult:
     """Extract RGB tuple from text using deterministic JSON-first parsing.
 
@@ -124,8 +156,11 @@ def extract_rgb(text: str) -> RGBParseResult:
     if json_result is not None:
         return json_result
 
+    keyed_result = _try_keyed_values(text)
+    if keyed_result is not None:
+        return keyed_result
+
     for pattern, source in (
-        (RGB_KEYED_PATTERN, "regex_keyed"),
         (RGB_TUPLE_PATTERN, "regex_tuple"),
         (RGB_BARE_TRIPLE_PATTERN, "regex_bare_triple"),
     ):

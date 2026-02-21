@@ -1,0 +1,1 @@
+{"run_id": "color_bypass_cuda_20260220_124232", "episode_index": 15, "episode_id": "color_bypass_cuda_20260220_124232_00000015", "m_model": "mistral:7b-instruct", "h_model": "qwen2.5:7b", "i_model": "llama3.1:8b", "task_variant": "standard_paint_lab", "trial_index": 0, "seed": 12360}

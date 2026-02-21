@@ -1,0 +1,1 @@
+{"run_id": "color_bypass_followup_more_v2_20260221_124849", "episode_index": 43, "episode_id": "color_bypass_followup_more_v2_20260221_124849_00000043", "m_model": "qwen2.5:7b", "h_model": "qwen2.5:7b", "i_model": "tinyllama:latest", "task_variant": "strict_measurement_protocol", "trial_index": 1, "seed": 260265}
