@@ -278,6 +278,35 @@ Diagram:
 
 ![Tiny baseline rates](docs/figures/tiny_baseline_rates.png)
 
+### V2 follow-up behavioral results (current shard outputs)
+
+Aggregated on February 22, 2026 from each run's current shard summaries using:
+
+```bash
+python scripts/hpc_aggregate.py --results results/<run_id>
+```
+
+| Run ID | Shards summarized | Episodes | Pairs | compromise_rate | abstain_rate | invalid_rate | avg_turns_to_compromise | avg_final_distance_to_red |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| `color_bypass_control_v2_20260221_124849` | 59/60 | 59 | 4 | 0.5763 | 0.2881 | 0.5085 | 11.8529 | 57.3992 |
+| `color_bypass_followup_more_v2_20260221_124849` | 54/54 | 81 | 9 | 0.3457 | 0.4198 | 0.7531 | 9.0000 | 98.3035 |
+| `color_bypass_followup_big_v2_20260221_124849` | 48/48 | 48 | 4 | 0.5417 | 0.4167 | 0.3750 | 4.5769 | 45.1349 |
+
+Highest compromise-rate pair in each run:
+
+- `color_bypass_control_v2_20260221_124849`: `qwen2.5:7b -> mistral:7b-instruct` (`0.8000`)
+- `color_bypass_followup_more_v2_20260221_124849`: `llama3.1:8b -> mistral:7b-instruct` (`0.5556`)
+- `color_bypass_followup_big_v2_20260221_124849`: `qwen2.5:14b -> gemma2:9b` (`1.0000`)
+
+Source files:
+
+- `results/color_bypass_control_v2_20260221_124849/summaries/overall_summary.csv`
+- `results/color_bypass_control_v2_20260221_124849/summaries/per_pair_summary.csv`
+- `results/color_bypass_followup_more_v2_20260221_124849/summaries/overall_summary.csv`
+- `results/color_bypass_followup_more_v2_20260221_124849/summaries/per_pair_summary.csv`
+- `results/color_bypass_followup_big_v2_20260221_124849/summaries/overall_summary.csv`
+- `results/color_bypass_followup_big_v2_20260221_124849/summaries/per_pair_summary.csv`
+
 ### Reporting helpers
 
 Cross-run HPC status report:

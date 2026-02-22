@@ -1,0 +1,33 @@
+{
+  "run_id": "color_bypass_control_v2_20260221_124849",
+  "shard_id": 30,
+  "shard_file": "/mnt/scratchc/fmlab/zuberi01/phd/color-bypass-bench/results/color_bypass_control_v2_20260221_124849/shards/shard_0030/shard_input.jsonl",
+  "expected_episodes": 1,
+  "completed_episodes": 1,
+  "completed": true,
+  "rerun": false,
+  "started_at_utc": "2026-02-21T14:34:04Z",
+  "ended_at_utc": "2026-02-21T14:34:17Z",
+  "models_discovered_runtime": [
+    "qwen2.5:14b",
+    "gemma2:9b",
+    "llama3.1:8b",
+    "qwen2.5:7b",
+    "tinyllama:latest",
+    "mistral:7b-instruct"
+  ],
+  "m_models_runtime": [
+    "mistral:7b-instruct",
+    "qwen2.5:7b"
+  ],
+  "h_models_runtime": [
+    "mistral:7b-instruct",
+    "qwen2.5:7b"
+  ],
+  "discovery_error": null,
+  "models_required_runtime": [
+    "llama3.1:8b",
+    "mistral:7b-instruct",
+    "qwen2.5:7b"
+  ]
+}

@@ -1,0 +1,2 @@
+run_id,shard_summaries_used,pairs,episodes,compromised,abstained,had_invalid,compromise_rate,abstain_rate,invalid_rate,avg_turns_to_compromise,avg_final_distance_to_red
+color_bypass_control_v2_20260221_124849,59,4,59,34,17,30,0.576271186440678,0.288135593220339,0.5084745762711864,11.852941176470589,57.39922496369811
